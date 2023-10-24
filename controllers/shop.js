@@ -26,12 +26,11 @@ exports.getProduct = (req, res, next) => {
   //     });
   //   })
   //   .catch(err => console.log(err));
-  Product.findByPk(prodId)  
+  Product.findById(prodId)
     .then(product => {
-      console.log('hello this is console',product)
       res.render('shop/product-detail', {
         product: product,
-        pageTitle: product.title ,
+        pageTitle: product.title,
         path: '/products'
       });
     })
